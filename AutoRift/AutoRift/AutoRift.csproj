@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3ECA02D6-CB05-4C00-AC8B-B74917ABA3FE}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AutoRift</RootNamespace>
+    <AssemblyName>AutoRift</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EloBuddy">
+      <HintPath>C:\Program Files (x86)\EloBuddy\System\EloBuddy.dll</HintPath>
+    </Reference>
+    <Reference Include="EloBuddy.Sandbox">
+      <HintPath>C:\Program Files (x86)\EloBuddy\System\EloBuddy.Sandbox.dll</HintPath>
+    </Reference>
+    <Reference Include="EloBuddy.SDK">
+      <HintPath>C:\Program Files (x86)\EloBuddy\System\EloBuddy.SDK.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:\Program Files (x86)\EloBuddy\System\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX">
+      <HintPath>C:\Program Files (x86)\EloBuddy\System\SharpDX.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct3D9">
+      <HintPath>C:\Program Files (x86)\EloBuddy\System\SharpDX.Direct3D9.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.XInput">
+      <HintPath>C:\Program Files (x86)\EloBuddy\System\SharpDX.XInput.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\BuildData.cs" />
+    <Compile Include="Data\ChampionBuildGroup.cs" />
+    <Compile Include="Data\DataManager.cs" />
+    <Compile Include="Data\Events\EventArgs.cs" />
+    <Compile Include="Data\Events\EventManagerDelegates.cs" />
+    <Compile Include="Data\IBuild.cs" />
+    <Compile Include="Data\ItemBuild.cs" />
+    <Compile Include="Data\BuildManager.cs" />
+    <Compile Include="Data\Lane.cs" />
+    <Compile Include="Data\MinionManager.cs" />
+    <Compile Include="Data\MinionWave.cs" />
+    <Compile Include="Data\Nexus.cs" />
+    <Compile Include="Data\SpellBuild.cs" />
+    <Compile Include="ConfigKey.cs" />
+    <Compile Include="Data\Spells\SpellBase.cs" />
+    <Compile Include="Data\Spells\SpellLibrary.cs" />
+    <Compile Include="Data\Spells\SpellManager.cs" />
+    <Compile Include="Data\Spells\Spells.cs" />
+    <Compile Include="Data\Status.cs" />
+    <Compile Include="Data\Turrent.cs" />
+    <Compile Include="Helpers\Color.cs" />
+    <Compile Include="Helpers\Heroes.cs" />
+    <Compile Include="Helpers\Vector.cs" />
+    <Compile Include="Logic\DefaultLogicContainer.cs" />
+    <Compile Include="Logic\EventManager.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="Logic\ILogic.cs" />
+    <Compile Include="Data\MovementData.cs" />
+    <Compile Include="Logic\LogicManager.cs" />
+    <Compile Include="Logic\LogicSelector.cs" />
+    <Compile Include="Logic\Logics\DefaultDeathLogic.cs" />
+    <Compile Include="Logic\Logics\DefaultDefendLogic.cs" />
+    <Compile Include="Logic\Logics\DefaultFarmLogic.cs" />
+    <Compile Include="Logic\Logics\DefaultFightLogic.cs" />
+    <Compile Include="Logic\Logics\DefaultFleeLogic.cs" />
+    <Compile Include="Logic\Logics\DefaultHarrasLogic.cs" />
+    <Compile Include="Logic\Logics\DefaultLaneSelectLogic.cs" />
+    <Compile Include="Logic\Logics\DefaultWinLogic.cs" />
+    <Compile Include="MenuManager.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Random.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <Compile Include="Config.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
